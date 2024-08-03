@@ -40,6 +40,9 @@ urlpatterns = [
     path('user/api/v1/', include('authen.api.v1.urls')),
     path('program/api/v1/', include('program.api.v1.urls')),
     path('faculty/api/v1/', include('faculty.api.v1.urls')),
+    path('subject/api/v1/', include('subject.api.v1.urls')),
+    path('student/api/v1/', include('student.api.v1.urls')),
+    
     # path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),

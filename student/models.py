@@ -5,7 +5,7 @@ from authen.models import User
 
 class StudentTerm(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    gpa = models.FloatField(default=0.0)
+    gps = models.FloatField(default=0.0)
     subjects = models.JSONField()
     created_at = models.DateTimeField(auto_now_add=True)
     
