@@ -5,5 +5,5 @@ from faculty.models import Major
 
 class Program(models.Model):
     major = models.ForeignKey(Major, on_delete=models.PROTECT)
-    detail = models.JSONField()
+    detail = models.JSONField(null=True)
     version = models.PositiveIntegerField(default=1)

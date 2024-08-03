@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.db import transaction
+from django.contrib.auth.hashers import make_password
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 from authen.models import User
@@ -44,9 +45,10 @@ class UserModelSerializer(serializers.ModelSerializer):
         
     @transaction.atomic
     def create(self, validated_data):
+        validated_data["password"] = make_password(validated_data["password"])
         return super().create(validated_data)
     
-    @transaction
+    @transaction.atomic
     def update(self, instance, validated_data):
         return super().update(instance, validated_data)
         

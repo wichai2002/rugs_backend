@@ -16,12 +16,12 @@ class FacultyModelSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         return super().create(validated_data)
     
-    @transaction
+    @transaction.atomic
     def update(self, instance, validated_data):
         return super().update(instance, validated_data)
 
 
-class MarjorModelSerializer(serializers.ModelSerializer):
+class MajorModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Major
         fields = [
@@ -35,7 +35,7 @@ class MarjorModelSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         return super().create(validated_data)
     
-    @transaction
+    @transaction.atomic
     def update(self, instance, validated_data):
         return super().update(instance, validated_data)
     
